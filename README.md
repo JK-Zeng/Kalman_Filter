@@ -1,6 +1,22 @@
-Kalman_Filter
-===
-## 一、问题描述
+<!--
+ * @Author: jk_zeng@qq.com
+ * @Date: 2023-08-09 17:16:40
+ * @LastEditors: jk_zeng@qq.com
+ * @LastEditTime: 2023-08-10 09:54:57
+ * @FilePath: /Kalman_Filter/README.md
+ * @Description:
+ * 
+ * Copyright (c) 2023 by ${jk_zeng@qq.com}, All Rights Reserved. 
+-->
+# Kalman_Filter
+### 软件介绍
+     一个卡尔曼滤波器，适应任意维度、任意模型。
+### 安装说明
+1. 安装Eigen线性代数运算库；
+2. 将头文件加入工程
+3. 引用头文件。
+### 软件说明
+#### 问题描述
 <p align="center">
 x(k)=Ax(k-1)+Bu(k)+w(k)
 </p>
@@ -19,9 +35,9 @@ z(k)=Hx(k)+y(k)
      y(k)为符合高斯分布的测量噪声，均值为0，协方差为R；
      H为转换矩阵，将状态转换在测量空间内。
      
-## 二、目标
+#### 目标
 **已经有了测量值z(k)，估计系统的真实状态x(k)。**
-### 预测：
+##### 预测：
 <p align="center">
 x(k|k-1)=Ax(k-1|k-1)+Bu(k)  
 </p>
@@ -35,7 +51,7 @@ P(k|k-1)=AP(k-1|k-1) A^T+Q
      B为控制输入矩阵；
      Q为过程噪声协方差。
      
-### 滤波：<br>
+##### 滤波：
 <p align="center">
 K(k)=P(k|k-1) H^T [HP(k|k-1) H^T+R]^(-1)
 </p>
